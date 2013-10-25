@@ -43,43 +43,19 @@ Sounds are loaded on a need basis when they are played.
 3.1 Folders
 -----------
 
- \|                  The root folder contains the project file, resource files,
-
- \|                  the license information and this file (release notes).
-
- \|
-
- \|- nbproject       Contains NetBeans project files.
-
- \|
-
- \|- res             Contains game resources.
-
- \|  \|
-
- \|  \|- image        Contains game graphics.
-
- \|  \|
-
- \|  \|- sound        Contains game sounds.
-
- \|
-
- \|- src             Contains the Java source code files.
-
+* The root folder contains the project files, the Application Descriptor file,
+  the license information and this file (release notes).
+* `nbproject` folder contains NetBeans project files.
+* `res` folder contains game resources.
+* `res\images` folder contains game graphics.
+* `res\sound` folder contains game sounds.
+* `src` folder contains the Java source code files.
 
 3.2 Important files and classes
 -------------------------------
-
-| File                           | Description                                |
-|--------------------------------|--------------------------------------------|
-| src\..\FrozenCanvas.java       | Contains the game loop and also the        |
-|                                | loading thread. Extends GameCanvas for     |
-|                                | rendering the game.                        |
-|--------------------------------|--------------------------------------------|
-| src\..\FrozenGame.java         | Contains the game logic.                   |
-|--------------------------------|--------------------------------------------|
-
+* `com.nokia.frozenbubble`
+ * `FrozenCanvas.java`: Contains the game loop and also the loading thread. Extends GameCanvas for rendering the game. 
+ * `FrozenGame.java `: Contains the game logic. 
 
 3.3 Used APIs
 -------------
