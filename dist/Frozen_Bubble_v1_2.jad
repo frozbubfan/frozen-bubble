@@ -1,0 +1,8 @@
+MIDlet-1: Frozen Bubble,/app_frozen_bubble.png,com.nokia.frozenbubble.FrozenBubble
+MIDlet-Jar-Size: 751640
+MIDlet-Jar-URL: Frozen_Bubble_v1_2.jar
+MIDlet-Name: Frozen Bubble
+MIDlet-Vendor: Nokia
+MIDlet-Version: 1.2
+MicroEdition-Configuration: CLDC-1.1
+MicroEdition-Profile: MIDP-2.0
