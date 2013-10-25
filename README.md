@@ -119,9 +119,8 @@ The game can be started in emulator by selecting 'Run Main Project' in NetBeans.
 6. License
 -------------------------------------------------------------------------------
 
-See the licence text file delivered with this project. The licence file is also
-available online at
-http://projects.developer.nokia.com/frozenbubble/browser/LICENCE.TXT
+See the licence text file delivered with this project:
+https://github.com/nokia-developer/frozen-bubble/blob/master/LICENCE.TXT
 
 
 7. Related documentation
