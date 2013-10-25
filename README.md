@@ -44,16 +44,27 @@ Sounds are loaded on a need basis when they are played.
 -----------
 
  \|                  The root folder contains the project file, resource files,
+
  \|                  the license information and this file (release notes).
+
  \|
+
  \|- nbproject       Contains NetBeans project files.
+
  \|
+
  \|- res             Contains game resources.
+
  \|  \|
+
  \|  \|- image        Contains game graphics.
+
  \|  \|
+
  \|  \|- sound        Contains game sounds.
+
  \|
+
  \|- src             Contains the Java source code files.
 
 
