@@ -139,6 +139,6 @@ Android port
 8. Version history
 -------------------------------------------------------------------------------
 
-1.2 Improved menu behaviour on Nokia Asha devices.
-1.1 Ported to Nokia Asha devices.
-1.0 Initial release
+* 1.2 Improved menu behaviour on Nokia Asha devices.
+* 1.1 Ported to Nokia Asha devices.
+* 1.0 Initial release
