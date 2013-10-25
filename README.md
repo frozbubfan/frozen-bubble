@@ -100,9 +100,9 @@ added to NetBeans.
 5.2 Building
 ------------
 
-The project can be easily opened in NetBeans by selecting 'Open Project' 
+The project can be easily opened in NetBeans by selecting **Open Project** 
 from the File menu and selecting the application. Building is done by selecting 
-'Build main project'.
+**Build main project**.
 
 5.3 Device
 --------------
