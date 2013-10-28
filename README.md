@@ -2,7 +2,7 @@ Frozen Bubble
 =============
 
 This Java ME example application demonstrates how you can port a fullscreen
-game from Android to Java ME in Nokia Asha software platform 1.0 and Series 40 
+game from Android to Java ME on Nokia Asha software platform and Series 40 
 touch devices. In this port the same game logic code and most of the resources 
 were reused while new code was written for starting up the game, handling menus 
 and playing sounds.
