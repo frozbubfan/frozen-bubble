@@ -48,7 +48,7 @@
  *      (code and graphics)
  *    Tuomo Hakaoja <tuomo.hakaoja at futurice.com>
  *      (new font)
- *    Copyright (c) 2012 Nokia Corporation
+ *    Copyright (c) 2012-2014 Microsoft Mobile
  * 
  *          [[ http://code.google.com/p/frozenbubbleandroid/ ]]
  *          [[ http://glenn.sanson.free.fr/fb/               ]]
