@@ -168,14 +168,14 @@ public class FrozenCanvas
         addCommand(backCommand);
         setCommandListener(this);
 
-        menu = new Menu(4);
+        menu = new Menu(5);
         menu.setItem(0, "new game");
         menu.setItem(1, "resume");
         menu.setItem(2, "about");
         menu.setItem(3, "settings");
         menu.setItem(4, "exit");
 
-        settingsMenu = new Menu(HW_BACK_KEY_EXISTS ? 4 : 5);
+        settingsMenu = new Menu(5);
         settingsMenu.setItem(0, "colorblind mode:");
         settingsMenu.setItem(1, "sound:");
         settingsMenu.setItem(2, "point to shoot:");
