@@ -82,7 +82,6 @@ public class FrozenCanvas
     extends GameCanvas
     implements CommandListener {
 
-    private static final boolean HW_BACK_KEY_EXISTS;
     private static final int RIGHT_SOFTKEY = -7;
     private static final int FRAME_DELAY = 40;
     private static final int MODE_RUNNING = 1;
@@ -156,10 +155,6 @@ public class FrozenCanvas
     private ImageLoaderThread imageLoaderThread = null;
     private volatile int imagesLoaded;
     private Command backCommand;
-    
-    static {
-        HW_BACK_KEY_EXISTS = System.getProperty("com.nokia.keyboard.type").equalsIgnoreCase("OnekeyBack");
-    }
 
     /**
      * Constructor
@@ -167,26 +162,25 @@ public class FrozenCanvas
     public FrozenCanvas() {
         super(false);
         setFullScreenMode(true);
-        setMode(MODE_MENU);
+        setMode(MODE_PAUSE);
 
         backCommand = new Command("Back", Command.BACK, 0);
         addCommand(backCommand);
         setCommandListener(this);
 
         menu = new Menu(4);
-        menu.setItem(0, "resume");
-        menu.setItem(1, "new game");
+        menu.setItem(0, "new game");
+        menu.setItem(1, "resume");
         menu.setItem(2, "about");
         menu.setItem(3, "settings");
+        menu.setItem(4, "exit");
 
         settingsMenu = new Menu(HW_BACK_KEY_EXISTS ? 4 : 5);
         settingsMenu.setItem(0, "colorblind mode:");
         settingsMenu.setItem(1, "sound:");
         settingsMenu.setItem(2, "point to shoot:");
         settingsMenu.setItem(3, "don't rush me:");
-        if (!HW_BACK_KEY_EXISTS) {
-            settingsMenu.setItem(4, "back");
-        }
+        settingsMenu.setItem(4, "back");
 
         aboutText = new String[]{
             null,
@@ -335,10 +329,10 @@ public class FrozenCanvas
             else if (gameAction == GameCanvas.FIRE) {
                 switch (menu.focused()) {
                     case 0:
+                        newGame();
                         setMode(MODE_RUNNING);
                         break;
                     case 1:
-                        newGame();
                         setMode(MODE_RUNNING);
                         break;
                     case 2:
@@ -346,6 +340,9 @@ public class FrozenCanvas
                         break;
                     case 3:
                         settings();
+                        break;
+                    case 4:
+                        FrozenBubble.exit();
                         break;
                 }
             }
@@ -443,10 +440,10 @@ public class FrozenCanvas
         if (mode == MODE_MENU) {
             menu.unfocus();
             if (y > 167 && y < 227) {
+                newGame();
                 setMode(MODE_RUNNING);
             }
             else if (y < 287) {
-                newGame();
                 setMode(MODE_RUNNING);
             }
             else if (y < 347) {
@@ -454,6 +451,9 @@ public class FrozenCanvas
             }
             else if (y < 407) {
                 settings();
+            }
+            else if (y < 467) {
+                FrozenBubble.exit();
             }
         }
         else if (mode == MODE_SETTINGS) {
@@ -470,7 +470,7 @@ public class FrozenCanvas
             else if (y < 360) {
                 SettingsManager.toggleDontRushMe();
             }
-            else if (y < 440 && !HW_BACK_KEY_EXISTS) {
+            else if (y < 440) {
                 menu();
             }
         }
@@ -734,10 +734,8 @@ public class FrozenCanvas
         printCentered(settingsMenu.getItem(3), y, g);
         printCentered(SettingsManager.isDontRushMe() ? "on" : "off", y
             + lineHeight, g);
-        if (!HW_BACK_KEY_EXISTS) {
-            y += ysp + 11;
-            printCentered(settingsMenu.getItem(4), y, g);
-        }
+        y += ysp + 11;
+        printCentered(settingsMenu.getItem(4), y, g);
     }
 
     private void drawAboutScreen(Graphics g) {
@@ -776,10 +774,8 @@ public class FrozenCanvas
         if (aboutDY < minDY) {
             aboutDY -= minDY;
         }
-        if (!HW_BACK_KEY_EXISTS) {
             g.drawImage(backButton.bmp, canvasWidth, canvasHeight,
                 Graphics.BOTTOM | Graphics.RIGHT);
-        }
     }
 
     private void drawGame(Graphics g) {
@@ -993,11 +989,9 @@ public class FrozenCanvas
                         + ".png");
                 }
                 scaleFrom(menuTitle, "menu.jpg");
-                scaleFrom(menuButton, "simple_pause_button.gif");
-                scaleFrom(backButton, "simple_back_button.gif",
-                    "back_button.gif");
-                scaleFrom(background, "simple_background.jpg",
-                    "background.jpg");
+                scaleFrom(menuButton, "simple_menu_button.gif");
+                scaleFrom(backButton, "simple_back_button.gif");
+                scaleFrom(background, "simple_background.jpg");
                 for (int i = 0; i < bubbles.length; i++) {
                     scaleFrom(bubbles[i], "bubble_" + (i + 1) + ".gif");
                 }
