@@ -695,6 +695,7 @@ public class FrozenGame
                 movingBubble = null;
             }
 
+            /*
             if (movingBubble != null) {
                 movingBubble.move();
                 if (movingBubble.fixed()) {
@@ -730,6 +731,7 @@ public class FrozenGame
                     movingBubble = null;
                 }
             }
+            */
         }
 
         if (movingBubble == null && !endOfGame) {
