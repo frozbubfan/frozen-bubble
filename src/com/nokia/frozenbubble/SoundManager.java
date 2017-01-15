@@ -75,7 +75,7 @@ public class SoundManager
     public final static int SOUND_NEWROOT = 7;
     public final static int SOUND_NOH = 8;
     private final static int NUM_SOUNDS = 9;
-    private final static int MAX_LOADED_PLAYERS = 4;
+    private final static int MAX_LOADED_PLAYERS = 2;
     private final static int MAX_PLAYERS = supportsMixing() ? 2 : 1;
     private final Vector loadedPlayers = new Vector();
     private final Vector playing = new Vector();
