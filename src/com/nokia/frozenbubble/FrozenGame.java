@@ -413,8 +413,6 @@ public class FrozenGame
         frozenifyY = 12;
 
         frozenify = true;
-
-        lifeManager.decrease();
     }
 
     private void frozenify() {
@@ -497,6 +495,7 @@ public class FrozenGame
     }
 
     private void sendBubblesDown() {
+        boolean alreadyExecuted = false;
         soundManager.playSound(SoundManager.SOUND_NEWROOT);
 
         for (int i = 0; i < 8; i++) {
@@ -504,12 +503,14 @@ public class FrozenGame
                 if (bubblePlay[i][j] != null) {
                     bubblePlay[i][j].moveDown();
 
-                    if (bubblePlay[i][j].getSpritePosition().y >= 380) {
+                    if (bubblePlay[i][j].getSpritePosition().y >= 380 && !alreadyExecuted) {
                         penguin.updateState(PenguinSprite.STATE_GAME_LOST);
                         endOfGame = true;
                         initFrozenify();
+                        lifeManager.decrease();
 
                         soundManager.playSound(SoundManager.SOUND_LOST);
+                        alreadyExecuted = true;
                     }
                 }
             }
@@ -668,6 +669,7 @@ public class FrozenGame
                     penguin.updateState(PenguinSprite.STATE_GAME_LOST);
                     endOfGame = true;
                     initFrozenify();
+                    lifeManager.decrease();
 
                     soundManager.playSound(SoundManager.SOUND_LOST);
                 }
