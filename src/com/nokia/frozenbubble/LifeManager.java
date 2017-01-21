@@ -110,14 +110,14 @@ public class LifeManager {
     /**
      * Decrease lives by one.
      */
-    public void decrease() {
+    public final void decrease() {
         currentLife--;
     }
 
     /**
      * Increase lives by one.
      */
-    public void increase() {
+    public final void increase() {
         if (currentLife < NB_LIVES) {
             currentLife++;
         }
@@ -126,7 +126,7 @@ public class LifeManager {
     /**
      * @return true if there are no lives left
      */
-    public boolean isDead() {
+    public final boolean isDead() {
         return currentLife <= 0;
     }
 
