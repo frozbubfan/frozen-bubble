@@ -118,7 +118,7 @@ public class LifeManager {
      * Increase lives by one.
      */
     public final void increase() {
-        if (currentLife < NB_LIVES) {
+        if (currentLife < 10) {
             currentLife++;
         }
     }
