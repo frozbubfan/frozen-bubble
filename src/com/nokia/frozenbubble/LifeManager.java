@@ -66,7 +66,7 @@ import javax.microedition.lcdui.Graphics;
  */
 public class LifeManager {
 
-    public final static int NB_LIVES = 3;
+    public final static int NB_LIVES = 4;
     private int currentLife;
     private BmpWrap penguin;
 
