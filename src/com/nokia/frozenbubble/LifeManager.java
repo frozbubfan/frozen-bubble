@@ -66,7 +66,7 @@ import javax.microedition.lcdui.Graphics;
  */
 public class LifeManager {
 
-    public final static int NB_LIVES = 3;
+    public final static int NB_LIVES = 1;
     private int currentLife;
     private BmpWrap penguin;
 
@@ -118,7 +118,7 @@ public class LifeManager {
      * Increase lives by one.
      */
     public final void increase() {
-        if (currentLife < 10) {
+        if (currentLife < 9) {
             currentLife++;
         }
     }
